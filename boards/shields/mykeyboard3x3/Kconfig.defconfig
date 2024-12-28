@@ -1,0 +1,6 @@
+if SHIELD_mykeyboard3x3
+
+config ZMK_KEYBOARD_NAME
+    default "mykeyboard3x3"
+
+endif
