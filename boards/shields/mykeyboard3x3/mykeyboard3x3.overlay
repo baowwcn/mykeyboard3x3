@@ -1,5 +1,5 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-#矩阵转换，用于定义从行/列值到关键位置的映射。
+
 / {
     chosen {
         zmk,kscan = &kscan0;
@@ -21,7 +21,7 @@
     };
 
 
-    # 键盘扫描配置文档,包含有关配置 kscan 驱动程序的完整详细信息。
+
 
     kscan0: kscan0 {
         compatible = "zmk,kscan-gpio-matrix";
