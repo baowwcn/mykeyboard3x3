@@ -1,3 +1,4 @@
+#include <dt-bindings/zmk/matrix_transform.h>
 #矩阵转换，用于定义从行/列值到关键位置的映射。
 / {
     chosen {
