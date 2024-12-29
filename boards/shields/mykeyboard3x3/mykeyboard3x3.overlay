@@ -1,18 +1,13 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-/ {
-    // 第一个编码器（控制上下方向）
-    encoder0: encoder_0 {
-        compatible = "zmk,behavior-encoder";
-        binding-left = <&kp DOWN>; // 顺时针旋转触发 DOWN
-        binding-right = <&kp UP>;  // 逆时针旋转触发 UP
-        gpios = <&gpio0 14 GPIO_ACTIVE_LOW>, <&gpio0 15 GPIO_ACTIVE_LOW>; // 替换为你的实际引脚
-    };
+#include "mykeyboard3x3.dtsi"
+&kscan0 {
+    col-gpios
+        , <&pro_micro 20 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 21 GPIO_ACTIVE_HIGH>
+        ;
+};
 
-    // 第二个编码器（控制左右方向）
-    encoder1: encoder_1 {
-        compatible = "zmk,behavior-encoder";
-        binding-left = <&kp LEFT>; // 顺时针旋转触发 LEFT
-        binding-right = <&kp RIGHT>; // 逆时针旋转触发 RIGHT
-        gpios = <&gpio1 2 GPIO_ACTIVE_LOW>, <&gpio1 3 GPIO_ACTIVE_LOW>; // 替换为你的实际引脚
-    };
+
+&right_encoder {
+    status = "okay";
 };
