@@ -5,7 +5,12 @@
 / {
     keymap {
         compatible = "zmk,keymap";
-
+        default_layer {
+            bindings = <
+                &kp A &kp B &kp C
+                &kp D &kp E &kp F
+            >;
+        };
         default_layer {
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
