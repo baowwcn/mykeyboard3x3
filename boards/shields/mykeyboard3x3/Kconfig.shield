@@ -1,3 +1,5 @@
-# No whitespace after the comma or in your keyboard name!
-config SHIELD_mykeyboard3x3
-    def_bool $(shields_list_contains,mykeyboard3x3)
+# Copyright (c) 2020 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+config SHIELD_CRBN
+    def_bool $(shields_list_contains,crbn)

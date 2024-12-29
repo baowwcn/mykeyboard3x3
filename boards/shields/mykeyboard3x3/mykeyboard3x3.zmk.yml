@@ -1,8 +1,0 @@
-file_format: "1"
-id: mykeyboard3x3
-name: mykeyboard3x3
-type: shield
-url: https://github.com/
-requires: [pro_micro]
-features:
-  - encoder
