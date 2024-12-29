@@ -5,16 +5,16 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer { // Layer 0
-            // -------------------------------------
-            // |     Z     |     M     |     K     |
-            // |     A     |     B     |     C     |
-            // |     D     |     E     |     F     |
-            bindings = <
-                &kp Z    &kp M    &kp K
-                &kp A    &kp B    &kp C
-                &kp D    &kp E    &kp F
-            >;
+        layer_state = <0>; // 定义默认图层
+
+        bindings = <
+            &kp A &kp B &kp C // 示例键位定义
+        >;
+
+        encoders {
+            encoder_0 = &encoder0;
+            encoder_1 = &encoder1;
         };
     };
- };
+};
+

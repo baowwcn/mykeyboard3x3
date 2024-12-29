@@ -1,43 +1,18 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-
 / {
-    chosen {
-        zmk,kscan = &kscan0;
-        zmk,matrix-transform = &default_transform;
+    // 第一个编码器（控制上下方向）
+    encoder0: encoder_0 {
+        compatible = "zmk,behavior-encoder";
+        binding-left = <&kp DOWN>; // 顺时针旋转触发 DOWN
+        binding-right = <&kp UP>;  // 逆时针旋转触发 UP
+        gpios = <&gpio0 14 GPIO_ACTIVE_LOW>, <&gpio0 15 GPIO_ACTIVE_LOW>; // 替换为你的实际引脚
     };
 
-    default_transform: keymap_transform0 {
-        compatible = "zmk,matrix-transform";
-        columns = <3>; // Length of the "col-gpios" array
-        rows = <3>; // Length of the "row-gpios" array
-        map = <
-        //   Key 1 | Key 2 | Key 3
-            RC(0,0) RC(0,1) RC(0,2)
-        //   Key 4 | Key 5 | Key 6
-            RC(1,0) RC(1,1) RC(1,2)
-        //   Key 7 | Key 8 | Key 9
-            RC(2,0) RC(2,1) RC(2,2)
-        >;
-    };
-
-
-
-
-    kscan0: kscan0 {
-        compatible = "zmk,kscan-gpio-matrix";
-        diode-direction = "col2row";
-        wakeup-source;
-
-        col-gpios
-            = <&pro_micro 15 GPIO_ACTIVE_HIGH>
-            , <&pro_micro 14 GPIO_ACTIVE_HIGH>
-            , <&pro_micro 16 GPIO_ACTIVE_HIGH>
-            ;
-
-        row-gpios
-            = <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            ;
+    // 第二个编码器（控制左右方向）
+    encoder1: encoder_1 {
+        compatible = "zmk,behavior-encoder";
+        binding-left = <&kp LEFT>; // 顺时针旋转触发 LEFT
+        binding-right = <&kp RIGHT>; // 逆时针旋转触发 RIGHT
+        gpios = <&gpio1 2 GPIO_ACTIVE_LOW>, <&gpio1 3 GPIO_ACTIVE_LOW>; // 替换为你的实际引脚
     };
 };
