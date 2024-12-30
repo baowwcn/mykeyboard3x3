@@ -20,7 +20,7 @@
                         &kp N7  &kp N8  &kp N9
             >;
 
-            sensor-bindings = <&inc_dec_kp A B>;
+            sensor-bindings = <&rot_kp PG_UP PG_DN>;
         };
     };
 };
