@@ -43,12 +43,12 @@
         layer_1 {
             bindings = <
                         &to 0         &kp A           &kp B
-                        &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2
-                        &bt BT_CLR    &bt BT_CLR_ALL  &bt BT_PRV
+                        &kp C         &kp D           &kp E
+                        &kp F         &kp G           &kp H
             >;
 
             sensor-bindings =
-                        <&inc_dec_kp K_VOLUME_UP2 K_VOLUME_DOWN>,
+                        <&inc_dec_kp K_VOLUME_UP K_VOLUME_DOWN>,
                         <&inc_dec_kp C_BRI_UP C_BRI_DEC>;
         };
     };
