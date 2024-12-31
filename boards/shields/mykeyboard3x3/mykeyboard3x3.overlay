@@ -8,8 +8,8 @@
 
     default_transform: keymap_transform0 {
         compatible = "zmk,matrix-transform";
-        columns = <3>; // Length of the "col-gpios" array
-        rows = <3>; // Length of the "row-gpios" array
+        columns = <3>; // "col-gpios" 数组的长度
+        rows = <3>;    // "row-gpios" 数组的长度
         map = <
         //   Key 1 | Key 2 | Key 3
             RC(0,0) RC(0,1) RC(0,2)
@@ -19,9 +19,6 @@
             RC(2,0) RC(2,1) RC(2,2)
         >;
     };
-
-
-
 
     kscan0: kscan0 {
         compatible = "zmk,kscan-gpio-matrix";
@@ -41,7 +38,8 @@
             ;
     };
 
-    encoder: encoder {
+    // 第一个编码器
+    encoder1: encoder1 {
         compatible = "alps,ec11";
         a-gpios = <&pro_micro 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&pro_micro 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
@@ -49,9 +47,18 @@
         status = "okay";
     };
 
+    // 第二个编码器
+    encoder2: encoder2 {
+        compatible = "alps,ec11";
+        a-gpios = <&pro_micro 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <80>;
+        status = "okay";
+    };
+
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
-        sensors = <&encoder>;
+        sensors = <&encoder1>, <&encoder2>; // 添加第二个编码器
         triggers-per-rotation = <20>;
     };
 };

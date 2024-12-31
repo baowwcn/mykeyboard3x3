@@ -16,11 +16,18 @@
   },
   "sensors": [
     {
-      "ref": "encoder",
-      "name": "encoder",
-      "identifier": "encoder",
+      "ref": "encoder1",
+      "name": "encoder1",
+      "identifier": "encoder1",
       "compatible": "alps,ec11",
-      "label": "ENCODER"
+      "label": "ENCODER1"
+    },
+    {
+      "ref": "encoder2",
+      "name": "encoder2",
+      "identifier": "encoder2",
+      "compatible": "alps,ec11",
+      "label": "ENCODER2"
     }
   ]
 }
