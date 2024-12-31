@@ -30,7 +30,7 @@
 
             // 第一个编码器的绑定
             sensor-bindings = <&rot_kp_1 PG_UP PG_DN>, // 编码器1：旋转触发 PG_UP 和 PG_DN
-                             <&rot_kp_2 LEFT RIGHT>;  // 编码器2：旋转触发 LEFT 和 RIGHT
+                             <&rot_kp_2 LEFT_ARROW RIGHT_ARROW>;  // 编码器2：旋转触发 LEFT 和 RIGHT
         };
     };
 };
